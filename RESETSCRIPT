@@ -1,0 +1,27 @@
+
+
+
+local function resetPlayer()
+    game.Players.LocalPlayer.Character.Humanoid.Health = 0 -- Set the player's health to 0
+end
+
+
+local gui = Instance.new("ScreenGui")
+gui.Name = "ResetButtonGui"
+gui.ResetOnSpawn = false
+gui.Parent = game.Players.LocalPlayer.PlayerGui
+
+local button = Instance.new("TextButton")
+button.Name = "ResetButton"
+button.Size = UDim2.new(0, 150, 0, 50)
+button.Position = UDim2.new(1, -170, 0, 20) -- Top right corner
+button.Text = "Reset Button"
+button.Font = Enum.Font.SourceSansBold
+button.TextSize = 20 -- Set the text size to 20 (adjust as needed)
+button.TextColor3 = Color3.new(1, 1, 1)
+button.BackgroundColor3 = Color3.new(0, 0, 0)
+button.BackgroundTransparency = 0.5
+button.Parent = gui
+
+
+button.MouseButton1Click:Connect(resetPlayer)
